@@ -1,27 +1,21 @@
 # See docs at: https://mystmd.org/guide/frontmatter
 version: 1
 project:
-  title: La Palma Seismicity 2021
-  subtitle: An analysis of earthquake swarms in relation to the 2021 eruption
+  title: Bayesian Parameter Estimation
+  subtitle: Exploring the Bayesic principles in a few canonical contexts
   authors:
-    - name: Steve Purves
-      orcid: 0000-0002-0760-5497
+    - name: Rachel Kurchin
+      orcid: 0000-0002-2147-4809
       corresponding: true
-      email: steve@curvenote.com
+      email: rkurchin@cmu.edu
       roles:
         - Investigation
         - Project administration
         - Software
         - Visualization
       affiliations:
-        - Curvenote
-    - name: Rowan Cockett
-      orcid: 0000-0002-7859-8394
-      corresponding: false
-      role: Project administration
-      affiliations:
-        - Curvenote
-  github: https://github.com/stevejpurves/ign-earthquake-data
+        - Carnegie Mellon University
+  github: https://github.com/rkurchin/BPE-demo-myst
   binder: >-
     https://mybinder.org/v2/gh/Notebooks-Now/submission-myst-full/HEAD?labpath=la-palma-visualization.ipynb
   open_access: true
@@ -33,9 +27,10 @@ project:
     title: Notebooks Now!
     url: https://data.agu.org/notebooks-now/
   keywords:
-    - La Palma
-    - Earthquakes
-  date: 2022-05-11
+    - Bayesian inference
+    - parameter estimation
+    - simulation
+  date: 2023-09-12
   requirements:
     - environment.yml
   resources:
@@ -64,8 +59,8 @@ project:
       journal_name: Notebooks Now!
       draft: false
 site:
-  title: La Palma Seismicity 2021
-  logo_text: La Palma Seismicity 2021
+  title: Bayesian Parameter Estimation
+  logo_text: Bayesian Parameter Estimation
   nav:
     - title: MyST Docs
       url: https://mystmd.org/guide

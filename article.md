@@ -1,9 +1,9 @@
 ---
 # File metadata may be provided as frontmatter YAML
-title: La Palma Seismicity 2021
-subtitle: An analysis of earthquake swarms in relation to the 2021 eruption
+title: Bayesian Parameter Estimation
+subtitle: Exploring the Bayesic principles in a few canonical contexts
 description: Analysis of the seismic earthquake data during the eruption
-date: 2021-11-10
+date: 2023-09-09
 tags:
   - volcano
   - seismicity
@@ -16,27 +16,35 @@ thumbnail: images/la-palma-eruption-2022-paper.png
 % The article should include an abstract block at the beginning. The block is delimited by `+++` before and after, and you must specify `"part": "abstract"` as JSON metadata on the block opener. This metadata is required for recognizing the content of this cell as the abstract.
 % The abstract should begin with a short description of the problem addressed, briefly describe the new data or analyses, then briefly state the main conclusion(s) and how they are supported, and address any uncertainty.
 
-In September 2021, a significant jump in seismic activity on the island of La Palma (Canary Islands, Spain) signaled the start of a volcanic crisis that still continues at the time of writing. Earthquake data is continually collected and published by the Instituto Geográphico Nacional (IGN). We have created an accessible dataset from this and completed preliminary data analysis which shows seismicity originating at two distinct depths, consistent with the model of a two reservoir system feeding the currently very active volcano.
+abstract lorem ipsum etc.
 
 +++
 
 # Introduction
+If you needed to estimate parameters – that is to say, fit a model – the first mathematical tool you would likely reach for would be linear regression. In this article, we'll explore an alternative to linear regression called Bayesian Parameter Estimation and consider in what circumstances it might be preferable. 
 
-> The content of your article is written in MyST markdown and supports [standard markdown typography](https://mystmd.org/guide/typography) and many [directives and roles](https://mystmd.org/guide/syntax-overview) for figures, tables, equations, etc.
+# Background: Bayes' Theorem
 
-La Palma is one of the west most islands in the Volcanic Archipelago of the Canary Islands, a Spanish territory situated is the Atlantic Ocean where at their closest point are 100km from the African coast [Figure %s](#map) The island is one of the youngest, remains active and is still in the island forming stage.
+Bayes' Theorem is a simple statement about conditional probabilities:
+```{math}
+:label: bayes
 
-> Figures may be added to your article using the [figure directive](https://mystmd.org/guide/figures). They may refer to images saved in your `images/` folder, images from the web, or notebook cell outputs [referenced by label](https://mystmd.org/guide/cross-references#targeting-cells). The `:name:` is used to reference the figure in your text; a reference to the following figure is found in the paragraph above. The figure caption is given as the body of this directive.
-
-```{figure} images/la-palma-map.png
-:name: map
-:align: center
-:width: 100%
-
-Map of La Palma in the Canary Islands. Image credit [NordNordWest](https://commons.wikimedia.org/w/index.php?curid=76638603)
+P(H|E) = \frac{P(E|H)P(H)}{P(E)}
 ```
+In this notation $H$ is a hypothesis and $E$ is some evidence we have observed. So Bayes' theorem tells us that we can compute the probability of some hypothesis being true given that we have observed a piece of evidence if we know:
+* the probability of observing said evidence in a world where the hypothesis is true, 
+* the probability of our hypothesis being true, and
+* the probability of observing the evidence.
 
-La Palma has been constructed by various phases of volcanism, the most recent and currently active being the _Cumbre Vieja_ volcano, a north-south volcanic ridge that constitutes the southern half of the island.
+It can be "derived" by considering that we can get the area of region AB below both by considering it either as the fraction of A that AB occupies multiplied by the total area of A *or* as the fraction of B that AB occupies multiplied by the total area of B. (The "Universe" is included to remind us that for A and B to represent probabilities, they have to be normalized!). For a more detailed version of this explanation, check out Oscar Bonilla's [blog post on "Visualizing Bayes' Theorem](https://oscarbonilla.com/2009/05/visualizing-bayes-theorem/).
+
+```{figure} images/venn-last.png
+:name: bayes-venn
+:align: center
+:width: 70%
+
+Visualizing the "derivation" of Bayes' theorem, from {cite:t}`bonilla`.
+```
 
 # Eruption History
 
